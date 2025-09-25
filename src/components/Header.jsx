@@ -1,4 +1,4 @@
-function Header() {
+function Header({ darkMode, setDarkMode }) {
   return (
     <header className="app-header">
       <div className="header-content">
@@ -12,10 +12,16 @@ function Header() {
           <a href="#" className="nav-link">✅ Mes Tâches</a>
           <a href="#" className="nav-link">📊 Statistiques</a>
           <a href="#" className="nav-link">ℹ️ À propos</a>
+          <button 
+            className="nav-link" 
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? "☀️ Mode clair" : "🌙 Mode sombre"}
+          </button>
         </nav>
       </div>
     </header>
   )
 }
 
-export default Header
+export default Header;
